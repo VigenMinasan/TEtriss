@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Game Layout (initially hidden) -->
+    <LinearLayout
+        android:id="@+id/gameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:context=".MainActivity">
+
+        <com.example.tetris.TetrisView
+            android:id="@+id/tetrisView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left"/>
+
+            <Button
+                android:id="@+id/buttonRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Right"/>
+
+            <Button
+                android:id="@+id/buttonRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rotate"/>
+
+            <Button
+                android:id="@+id/buttonDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Down"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonExitGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exit Game"
+            android:layout_gravity="top|end"/>
+    </LinearLayout>
+
+    <!-- Menu Layout (initially visible) -->
+    <include layout="@layout/activity_menu"
+        android:id="@+id/menuLayout"/>
+
+</FrameLayout>
